@@ -7,6 +7,7 @@ import productsRoute from './routes/productRoute.js';
 import morgan from 'morgan';
 import colors from 'colors';
 import orderRoute from './routes/orderRoute.js';
+import cors from 'cors';
 
 dotenv.config();
 
@@ -18,6 +19,8 @@ app.use(express.json());
 if (process.env.NODE_ENV === 'development') {
 	app.use(morgan('dev'));
 }
+
+app.use(cors());
 
 app.use(function (req, res, next) {
 	res.header('Access-Control-Allow-Origin', '*');
