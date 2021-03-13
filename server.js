@@ -6,6 +6,7 @@ import users from './routes/usersRoute.js';
 import productsRoute from './routes/productRoute.js';
 import morgan from 'morgan';
 import colors from 'colors';
+import orderRoute from './routes/orderRoute.js';
 
 dotenv.config();
 
@@ -31,6 +32,7 @@ app.use(function (req, res, next) {
 app.use('/api/register', users);
 app.use('/api/login', auth);
 app.use('/api/products', productsRoute);
+app.use('/api/order', orderRoute);
 
 const port = process.env.PORT || 5000;
 

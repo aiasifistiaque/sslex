@@ -8,3 +8,5 @@ const router = express.Router();
 router.route('./').get(protect, admin, getAllOrders).post(protect, addNewOrder);
 
 router.get('/:id', protect, getSingleOrder);
+
+export default router;
