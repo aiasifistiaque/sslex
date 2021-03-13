@@ -7,7 +7,7 @@ import { admin, protect } from '../middleware/auth.js';
 
 const router = express.Router();
 
-router.route('./').get(protect, admin, getAllOrders).post(protect, addNewOrder);
+router.route('/').get(protect, admin, getAllOrders).post(protect, addNewOrder);
 
 router.get('/:id', protect, getSingleOrder);
 
