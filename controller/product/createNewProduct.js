@@ -2,8 +2,18 @@ import Product from '../../models/productModel.js';
 import asyncHandler from 'express-async-handler';
 
 const createNewPorduct = asyncHandler(async (req, res) => {
+	//console.log(req);
 	try {
-		const product = new Product(sampleProduct);
+		const product = new Product({
+			name: req.body.name,
+			price: req.body.price,
+			user: req.user._id,
+			image: req.body.image,
+			brand: req.body.brand,
+			category: req.body.category,
+			countInStock: req.body.countInStock,
+			description: req.body.description,
+		});
 		const created = await product.save();
 		res.status(201).json(created);
 	} catch (e) {

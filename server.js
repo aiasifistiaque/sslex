@@ -8,6 +8,8 @@ import morgan from 'morgan';
 import colors from 'colors';
 import orderRoute from './routes/orderRoute.js';
 import cors from 'cors';
+import userRoute from './routes/userRoute.js';
+import gatewayRoute from './routes/gatewayRoute.js';
 
 dotenv.config();
 
@@ -41,6 +43,8 @@ app.use('/api/register', users);
 app.use('/api/login', auth);
 app.use('/api/products', productsRoute);
 app.use('/api/order', orderRoute);
+app.use('/api/profile', userRoute);
+app.use('/api/payment', gatewayRoute);
 
 const port = process.env.PORT || 5000;
 
