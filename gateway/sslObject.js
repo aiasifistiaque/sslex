@@ -9,9 +9,9 @@ const sslObject = req => {
 	post_body['currency'] = 'BDT'; //string
 	post_body['tran_id'] = req.body.transactionId; //string
 	post_body['product_category'] = 'electronics'; //string
-	post_body['success_url'] = 'http://localhost:3000/orderplaced'; //string
-	post_body['fail_url'] = 'https://ciphertext.live/payment/fail'; //string
-	post_body['cancel_url'] = 'https://ciphertext.live/payment/cancel'; //string
+	post_body['success_url'] = `${process.env.FRONTEND_ROUTE}/orderplaced`; //string
+	post_body['fail_url'] = `${process.env.FRONTEND_ROUTE}/ordercanceled`; //string
+	post_body['cancel_url'] = `${process.env.FRONTEND_ROUTE}/ordercanceled`; //string
 	post_body['emi_option'] = 0; //int 0 or 1
 
 	//customer
