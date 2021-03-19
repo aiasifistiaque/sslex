@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 const corsOptions = {
-	origin: process.env.FRONTEND_ROUTE,
+	origin: '*',
 	credentials: true, //access-control-allow-credentials:true
 	optionSuccessStatus: 200,
 };
